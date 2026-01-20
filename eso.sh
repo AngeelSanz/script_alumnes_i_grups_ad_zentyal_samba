@@ -1,12 +1,24 @@
-#! /usr/bin/env bash
-
+#!/bin/bash
 set -e
 set -u
 set -o pipefail
 
-1eso() {
-for letra in {a..d}; do
-echo "1eso$letra"
+alumnos(){
+for n in {1..30}; do
+	echo "alumnos$1_$n"
 done
 }
-1eso
+
+niveles_1eso() {
+# Definir el array
+niveles=("1esoA" "1esoB" "1esoC" "1esoD")
+
+# for en la lista de cadenas de caracteres
+for nivel in "${niveles[@]}"; do
+#    echo "Nivel: $nivel"
+alumnos "$nivel"
+done
+}
+
+niveles_1eso
+
